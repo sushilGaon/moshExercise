@@ -1,0 +1,12 @@
+.list-unstyled li{
+    border-bottom:1px solid #CCC;
+    padding: 15px 0;
+}
+.profilePic{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    float:left;
+    display:inline-block;
+    margin-right:20px;
+}

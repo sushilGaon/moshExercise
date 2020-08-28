@@ -1,0 +1,29 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input [class.is-invalid]="firstName.touched && firstName.errors != null" (blur)="onBlur(firstName)" required minlength="3" ngModel name="firstName" pattern="Sushil" #firstName="ngModel" id="firstName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors.required">First Name is required!</div>
+            <div *ngIf="firstName.errors.minlength">First Name should have {{firstName.errors.minlength.requiredLength}} or more characters.</div>
+            <div *ngIf="firstName.errors.pattern">First Name doesn't match the pattern.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea ngModel name="comment" #comment="ngModel" id="comment" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div ngModelGroup="contact" #contact="ngModelGroup">
+        <div class="alert alert-danger" *ngIf="contact.touched && !contact.valid"> 
+            Contact information is required!
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile No.:</label>
+            <input required ngModel name="mobile" minlength="10" maxlength="10" type="text" class="form-control" id="mobile" #mobile="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input required ngModel name="email" #email="ngModel" type="email" class="form-control" id="email">
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!f.valid" >Submit</button>
+</form>

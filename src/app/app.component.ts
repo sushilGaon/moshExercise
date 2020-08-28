@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'moshExercise';
+  post = {
+    title:'Title',
+    isFavorite:true,
+  }
+
+  onFavoriteChange(isFavorite:boolean){
+    this.post.isFavorite  = isFavorite;
+    console.log(this.post.isFavorite )
+  }
 }

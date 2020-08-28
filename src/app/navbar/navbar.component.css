@@ -1,0 +1,13 @@
+.navbar{
+    border-radius: 5px;
+    padding:0 1rem;
+}
+.navbar li{
+    padding:0.5rem 0;
+}
+.active, .navbar li:hover {
+    background:#CCC; 
+ }
+ .active a{
+    color:rgb(17, 17, 17);
+ }
